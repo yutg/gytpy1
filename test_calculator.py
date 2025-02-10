@@ -19,7 +19,11 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(divide(10, -2), -5)
         self.assertEqual(divide(-10, -2), 5)
         
-   
+    def test_zero_division(self):
+        """测试除以零的情况"""
+        with self.assertRaises(ZeroDivisionError):
+            divide(10, 0)
+            
     def test_invalid_input(self):
         """测试无效输入"""
         with self.assertRaises(TypeError):
